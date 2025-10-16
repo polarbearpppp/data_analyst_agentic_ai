@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Artifacts & local data
+artifacts/
+*.csv
+*.pkl
+*.json
+*.log
+
+# Docker
+*.pid
+*.tmp
+*.bak
+
+# OS
+.DS_Store

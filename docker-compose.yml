@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  agentic-ai:
+    build: .
+    container_name: agentic-credit-ai
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: >
+      bash -c "python agentic_credit_project.py --run ALL && tail -f /dev/null"
+    tty: true

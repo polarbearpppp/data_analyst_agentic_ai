@@ -1,0 +1,14 @@
+pandas
+scikit-learn
+pyyaml
+matplotlib
+seaborn
+joblib
+sentence-transformers
+faiss-cpu
+gpt4all
+xgboost
+lightgbm
+langchain
+langchain-community
+

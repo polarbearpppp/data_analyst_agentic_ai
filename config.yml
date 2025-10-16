@@ -1,0 +1,12 @@
+rag:
+  model_path: "models/ggml-gpt4all-j-v1.3-groovy.bin"
+
+data:
+  csv_path: "data/bank_behavior.csv"
+
+ml:
+  model_output: "artifacts/credit_model.pkl"
+
+agent:
+  llm: "gpt4all"
+  max_iterations: 5
