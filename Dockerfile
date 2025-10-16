@@ -20,5 +20,4 @@ COPY . .
 RUN mkdir -p /app/artifacts
 
 # Default command (can be overridden)
-CMD ["bash", "-c", "python agentic_credit_project.py --run ALL; tail -f /dev/null"]
-
+CMD ["python", "agentic_credit_project.py", "--run", "ALL"]

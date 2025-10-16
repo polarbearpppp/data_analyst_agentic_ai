@@ -10,6 +10,6 @@ services:
     working_dir: /app
     environment:
       - PYTHONUNBUFFERED=1
-    command: >
-      bash -c "python agentic_credit_project.py --run ALL && tail -f /dev/null"
+    # command: >
+      # bash -c "python agentic_credit_project.py --interactive"
     tty: true
