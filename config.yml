@@ -1,12 +1,27 @@
-rag:
-  model_path: "models/ggml-gpt4all-j-v1.3-groovy.bin"
-
 data:
-  csv_path: "data/bank_behavior.csv"
+  csv_path: "data/german_credit_data.csv"
 
-ml:
+preprocess:
+  target: "target"
+  drop_columns: []
+  numeric_impute_strategy: "median"
+  categorical_impute_strategy: "most_frequent"
+  scale: True
+  test_size: 0.2
+  random_state: 42
+
+rag:
+  model_path: "models/llama-2-7b.Q5_0.gguf"   # <-- updated to your LLaMA model
+  embed_model: "all-MiniLM-L6-v2"               # <-- still for feature embeddings
+  index_path: "artifacts/faiss_idx"
+  docs_path: "artifacts/feature_docs"
+
+train:
+  models: ["logreg", "rf"]
+  rf_n_estimators: 100
   model_output: "artifacts/credit_model.pkl"
 
 agent:
-  llm: "gpt4all"
+  llm: "llama"          # <-- change from "gpt4all" to "llama"
+  model_backend: "gguf" # optional, to indicate it uses the local GGUF model
   max_iterations: 5

@@ -7,6 +7,8 @@ import logging
 from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import Dict, Any, List, Optional
+import requests
+
 
 
 import pandas as pd
@@ -22,6 +24,16 @@ from sklearn.impute import SimpleImputer
 
 
 import joblib
+import os
 
-print('can import anything')
-print("Python version:", sys.version)
+# Load config.yaml
+with open("config.yml", "r") as f:
+    CONFIG = yaml.safe_load(f)
+
+# Example usage:
+import ollama
+import os
+
+client = ollama.Client(host=os.getenv("OLLAMA_HOST"))
+response = client.chat(model="deepseek-r1:latest", messages=[{"role": "user", "content": "1+1=?"}])
+print(response["message"]["content"])
